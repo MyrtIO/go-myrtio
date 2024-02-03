@@ -1,4 +1,4 @@
-# Go MyrtIO
+# MyrtIO Go library
 
 <img src="./docs/logo.svg" align="right" width="100" />
 
