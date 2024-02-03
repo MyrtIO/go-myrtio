@@ -55,10 +55,10 @@ func New(path string, baudRate int) (*Transport, error) {
 	port, err := serial.Open(path, &serial.Mode{
 		BaudRate: baudRate,
 	})
-	port.SetReadTimeout(time.Millisecond * 500)
 	if err != nil {
 		return nil, err
 	}
+	port.SetReadTimeout(time.Millisecond * 500)
 	time.Sleep(time.Millisecond * startDelayMs)
 	return &Transport{
 		port: port,
