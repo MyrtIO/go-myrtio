@@ -4,8 +4,9 @@ import (
 	"bufio"
 	"fmt"
 	"log"
-	"myrtio"
 	"os"
+
+	"github.com/MyrtIO/myrtio-go"
 )
 
 type MyrtIOTerminal struct {

@@ -1,4 +1,4 @@
-module myrtio
+module github.com/MyrtIO/myrtio-go
 
 go 1.21.4
 

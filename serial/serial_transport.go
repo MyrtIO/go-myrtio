@@ -3,9 +3,10 @@ package serial
 import (
 	"errors"
 	"fmt"
-	"myrtio"
 	"sync"
 	"time"
+
+	"github.com/MyrtIO/myrtio-go"
 
 	"go.bug.st/serial"
 )

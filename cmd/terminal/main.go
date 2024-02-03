@@ -3,8 +3,10 @@ package main
 import (
 	"fmt"
 	"log"
-	"myrtio/cmd/terminal/repl"
-	"myrtio/serial"
+
+	"github.com/MyrtIO/myrtio-go/serial"
+
+	"github.com/MyrtIO/myrtio-go/cmd/terminal/repl"
 )
 
 const (

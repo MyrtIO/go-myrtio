@@ -1,10 +1,11 @@
 package repl
 
 import (
-	"myrtio"
-	"myrtio/cmd/terminal/color"
 	"strconv"
 	"strings"
+
+	"github.com/MyrtIO/myrtio-go"
+	"github.com/MyrtIO/myrtio-go/cmd/terminal/color"
 )
 
 func byteToString(b byte) string {
