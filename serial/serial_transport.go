@@ -14,10 +14,10 @@ import (
 
 // MyrtIO typical serial timings
 const (
-	startDelayMs   = 200
+	startDelayMs   = 500
 	commandDelayMs = 10
 	readDelayMs    = 50
-	readTimeoutMs  = 500
+	readTimeoutMs  = 100
 )
 
 // Transport represents MyrtIO serial transport
