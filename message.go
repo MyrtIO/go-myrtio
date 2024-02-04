@@ -30,6 +30,14 @@ func (m *Message) Bytes() []byte {
 	return result
 }
 
+func (m *Message) Success() bool {
+	return m.Payload[0] == SuccessCode
+}
+
+func (m *Message) SkipStatus() []byte {
+	return m.Payload[1:]
+}
+
 func ParseMessage(message []byte) (*Message, error) {
 	if len(message) < MinMessageLength || len(message) > MaxMessageLength {
 		return nil, ErrWrongLength
