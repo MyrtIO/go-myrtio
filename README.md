@@ -1,4 +1,4 @@
-# MyrtIO Go library
+# MyrtIO Go library [![Quality assurance](https://github.com/MyrtIO/myrtio-go/actions/workflows/quality-assurance.yaml/badge.svg)](https://github.com/MyrtIO/myrtio-go/actions/workflows/quality-assurance.yaml)
 
 <img src="./docs/logo.svg" align="right" width="100" />
 
