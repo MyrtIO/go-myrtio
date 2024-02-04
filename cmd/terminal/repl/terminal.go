@@ -9,12 +9,14 @@ import (
 	"github.com/MyrtIO/myrtio-go"
 )
 
+// MyrtIOTerminal represents MyrtIO REPL terminal
 type MyrtIOTerminal struct {
 	Prompt string
 	port   myrtio.Transport
 	reader *bufio.Reader
 }
 
+// New creates new MyrtIO Terminal
 func New(port myrtio.Transport) *MyrtIOTerminal {
 	return &MyrtIOTerminal{
 		Prompt: "$ ",
@@ -23,6 +25,7 @@ func New(port myrtio.Transport) *MyrtIOTerminal {
 	}
 }
 
+// Name returns connected device name
 func (m *MyrtIOTerminal) Name() (string, error) {
 	resp, err := m.port.RunAction(&myrtio.Message{
 		Feature: 0,
@@ -34,6 +37,7 @@ func (m *MyrtIOTerminal) Name() (string, error) {
 	return string(resp.Payload[1:]), nil
 }
 
+// Start main loop
 func (m *MyrtIOTerminal) Start() {
 	for {
 		fmt.Print(m.Prompt)
@@ -57,7 +61,7 @@ func (m *MyrtIOTerminal) read() ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	symbols, err := ParsePayload(input)
+	symbols, err := parsePayload(input)
 	if err != nil {
 		return nil, err
 	}

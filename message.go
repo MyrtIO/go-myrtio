@@ -4,16 +4,23 @@ import (
 	"errors"
 )
 
+// ErrWrongHeader is returned when given message contains wrong header codes
 var ErrWrongHeader = errors.New("unexpected header codes")
+
+// ErrWrongTail is returned when given message contains wrong tail code
 var ErrWrongTail = errors.New("unexpected tail code")
+
+// ErrWrongLength is returned when given message has incorrect length
 var ErrWrongLength = errors.New("message length is not correct")
 
+// Message represent MyrtIO message
 type Message struct {
 	Feature byte
 	Action  byte
 	Payload []byte
 }
 
+// Bytes returns message as byte slice
 func (m *Message) Bytes() []byte {
 	var payloadLength = 0
 	if m.Payload != nil {
@@ -30,14 +37,17 @@ func (m *Message) Bytes() []byte {
 	return result
 }
 
+// Success checks status value and returns it as bool
 func (m *Message) Success() bool {
 	return m.Payload[0] == SuccessCode
 }
 
+// SkipStatus returns payload without first status value
 func (m *Message) SkipStatus() []byte {
 	return m.Payload[1:]
 }
 
+// ParseMessage parses message from raw bytes slice
 func ParseMessage(message []byte) (*Message, error) {
 	if len(message) < MinMessageLength || len(message) > MaxMessageLength {
 		return nil, ErrWrongLength

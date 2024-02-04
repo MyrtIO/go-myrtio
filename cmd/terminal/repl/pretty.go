@@ -12,16 +12,8 @@ func byteToString(b byte) string {
 	return strconv.Itoa(int(b))
 }
 
-func joinBytes(elems []byte, sep string) string {
-	result := ""
-	for _, el := range elems {
-		if len(result) == 0 {
-			result = byteToString(el)
-			continue
-		}
-		result += sep + byteToString(el)
-	}
-	return result
+func dimUnderline(b byte) string {
+	return color.Combine(byteToString(b), color.CodeDim, color.CodeUnderline)
 }
 
 func prettyMessage(message []byte, status bool) string {
@@ -31,7 +23,7 @@ func prettyMessage(message []byte, status bool) string {
 		case 0, 1, len(message) - 1:
 			symbols = append(symbols, color.Dim(byteToString(el)))
 		case 2:
-			symbols = append(symbols, color.DimUnderline(byteToString(el)))
+			symbols = append(symbols, dimUnderline(el))
 		case 3, 4:
 			symbols = append(symbols, color.Blue(byteToString(el)))
 		case 5:

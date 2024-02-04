@@ -1,3 +1,4 @@
+// MyrtIO terminal example
 package main
 
 import (

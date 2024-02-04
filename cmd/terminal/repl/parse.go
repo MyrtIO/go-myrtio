@@ -1,3 +1,4 @@
+// Package repl contains MyrtIO REPL core
 package repl
 
 import (
@@ -5,7 +6,7 @@ import (
 	"strings"
 )
 
-func ParsePayload(input string) ([]byte, error) {
+func parsePayload(input string) ([]byte, error) {
 	symbols := strings.Fields(input)
 	result := make([]byte, 0, len(symbols))
 	for _, symbol := range symbols {
