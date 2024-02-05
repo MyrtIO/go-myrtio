@@ -1,4 +1,5 @@
-# MyrtIO Go library [![Quality assurance](https://github.com/MyrtIO/myrtio-go/actions/workflows/quality-assurance.yaml/badge.svg)](https://github.com/MyrtIO/myrtio-go/actions/workflows/quality-assurance.yaml)
+# MyrtIO Go library [![Quality assurance](https://github.com/MyrtIO/myrtio-go/actions/workflows/quality-assurance.yaml/badge.svg)](https://github.com/MyrtIO/myrtio-go/actions/workflows/quality-assurance.yaml) [![GitHub release](https://img.shields.io/github/v/tag/MyrtIO/myrtio-go)](https://GitHub.com/MyrtIO/myrtio-go/releases/)
+
 
 <img src="./docs/logo.svg" align="right" width="100" />
 
