@@ -2,8 +2,6 @@
 package serial
 
 import (
-	"errors"
-	"fmt"
 	"sync"
 	"time"
 
@@ -47,10 +45,7 @@ func (t *Transport) RunAction(message *myrtio.Message) (*myrtio.Message, error) 
 	}
 	responseMessage, err := myrtio.ParseMessage(response)
 	if err != nil {
-		return nil, errors.Join(
-			err,
-			fmt.Errorf("%v", response),
-		)
+		return nil, err
 	}
 	time.Sleep(time.Millisecond * commandDelayMs)
 	return responseMessage, nil
