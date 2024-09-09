@@ -13,7 +13,7 @@ import (
 // MyrtIO typical serial timings
 const (
 	startDelayMs   = 500
-	commandDelayMs = 10
+	commandDelayMs = 20
 	readDelayMs    = 50
 	readTimeoutMs  = 100
 )
